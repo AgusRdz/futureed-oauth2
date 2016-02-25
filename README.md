@@ -16,6 +16,7 @@ Para realizar la instalación agrega a tu archivo `composer.json` la dependencia
 
 `composer require futureed/oauth2`
 
+======
 ### Configuración
 Después de instalar la librería FutureED/OAuth2, en tu archivo de configuración `config/app.php` registra el siguiente ServiceProvider:
 
@@ -29,6 +30,25 @@ Después de instalar la librería FutureED/OAuth2, en tu archivo de configuraci�
 Además, añade el facade FutureED al arreglo de alias en tu archivo de configuración:
 `'FutureED' => FutureED\OAuth2\Facades\FutureED::class,`
 
+En el archivo ```config/services.php``` registra el siguiente servicio:
+
+```
+'FutureED' => [
+  'client_id' => env('FUTUREED_CLIENT_ID'),
+  'client_secret' => env('FUTUREED_CLIENT_SECRET'),
+  'redirect' => env('FUTUREED_REDIRECT'),
+],
+```
+
+Para finalizar, en el archivo de entorno (```.env```) coloca las credenciales proporcionas en el Panel de Desarrolladores de FutureED:
+
+```
+FUTUREED_CLIENT_ID=ID_ASIGNADO
+FUTUREED_CLIENT_SECRET=SECRET_ASIGNADO
+FUTUREED_REDIRECT_URI=URL_DE_REDIRECCION #Esta URL debe concidir con la ruta generada por Route::get('/oauth/callback', 'Auth\AuthController@callback');
+```
+
+======
 ### Uso Básico
 Se necesitan dos rutas: una para redireccionar el usuario al Proveedor de OAuth, y otra para recibir la respuesta después de la autorización:
 En tu archivo `app/Http/routes.php`:
@@ -39,8 +59,7 @@ Route::group(['middleware' => ['web']],
     'as' => 'redirectToFutureED',
     'uses' => 'Auth\AuthController@redirectToFutureED'
   ]);
-  Route::get('/oauth/callback', 'Auth\AuthController@callback'
-  ]);
+  Route::get('/oauth/callback', 'Auth\AuthController@callback');
 );
 ```
 
@@ -86,7 +105,7 @@ $user->email; // obtiene el correo electronico del usuario en formato de cadena 
 $user->getEmail(); // obtiene el correo electronico del usuario en formato de cadena de texto.
 ```
 
-#### Otros atributos obtenidos
+##### Otros atributos obtenidos
 ```
 $user->id;
 $user->token;
