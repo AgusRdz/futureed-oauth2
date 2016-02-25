@@ -21,7 +21,6 @@ class User extends AbstractUser
     public function setToken($token)
     {
         $this->token = $token;
-
         return $this;
     }
 }

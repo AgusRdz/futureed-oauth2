@@ -12,6 +12,11 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
      */
     public $id;
 
+    /**
+     * The user's access token.
+     *
+     * @var string
+     */
     public $token;
 
     /**
@@ -22,12 +27,17 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
     public $nickname;
 
     /**
-     * The user's full name.
+     * The user's first name.
      *
      * @var string
      */
     public $first_name;
 
+    /**
+     * The user's last name.
+     *
+     * @var string
+     */
     public $last_name;
 
     /**
@@ -65,7 +75,7 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
     }
 
     /**
-     * Get the full name of the user.
+     * Get the first name of the user.
      *
      * @return string
      */
@@ -74,6 +84,11 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
         return $this->name;
     }
 
+    /**
+     * Get the last name of the user.
+     *
+     * @return string
+     */
     public function getLastName()
     {
         return $this->name;
@@ -99,6 +114,11 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
         return $this->avatar;
     }
 
+    /**
+     * Get the access token of the user.
+     *
+     * @return string
+     */
     public function getToken() {
     	return $this->token;
     }

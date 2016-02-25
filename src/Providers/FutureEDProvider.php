@@ -4,13 +4,12 @@ namespace FutureED\OAuth2\Providers;
 use GuzzleHttp\ClientInterface;
 
 class FutureEDProvider extends AbstractProvider implements ProviderInterface {
-
-	protected $scopeSeparator = ',';
-
-	protected $version = '1.0';
-
-	protected $scopes = ['email', 'profile', 'user'];
-
+	/**
+	 * Map the raw user array to a FutureED User instance.
+	 *
+	 * @param  array  $user
+	 * @return \FutureED\OAuth2\User
+	 */
 	protected function mapUserToObject(array $user) {
 		return (new User)->setRaw($user)->map([
 			'id' => $user['id'],
