@@ -81,14 +81,18 @@ Es importante aclarar que los nombres de las rutas, métodos y controladores pue
 
 #### Obteniendo los detalles del usuario
 Una vez que la respuesta ha sido satisfactoria se puede accesar a la información del usuario de la siguiente manera:
-`$user->email; // obtiene el correo electronico del usuario en formato de cadena de texto.}`
-`$user->getEmail(); // obtiene el correo electronico del usuario en formato de cadena de texto.}`
+```
+$user->email; // obtiene el correo electronico del usuario en formato de cadena de texto
+$user->getEmail(); // obtiene el correo electronico del usuario en formato de cadena de texto.
+```
 
 #### Otros atributos obtenidos
-`$user->id;}`
-`$user->token;}`
-`$user->nickname;}`
-`$user->first_name;}`
-`$user->last_name;}`
-`$user->email;}`
-`$user->avatar;}`
+```
+$user->id;
+$user->token;
+$user->nickname;
+$user->first_name;
+$user->last_name;
+$user->email;
+$user->avatar;
+```
