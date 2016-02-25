@@ -103,17 +103,21 @@ abstract class AbstractProvider implements ProviderContract {
 		try {
 			$client = new Client(['base_uri' => $this->base_uri]);
 			$redirect_uri = $request->query('redirect_uri');
-    	$code = $request->query('code');
-    	$client_id = $request->query('client_id');
-    	$client_secret = $request->query('state');
+      $code = $request->query('code');
+      $client_id = $request->query('client_id');
+      $client_secret = $request->query('state');
       $grant_type = $request->query('grant_type');
       $email = $request->query('email');
       $getToken = $this->base_uri . 'auth/access_token?code=' . $code . '&client_id=' . $client_id . '&client_secret=' . $client_secret . '&grant_type=' . $grant_type . '&redirect_uri=' . $redirect_uri . '&email=' . $email;
       $response = $client->request('GET', $getToken);
-      $json = $response->getBody();
-      return $this->cleanUserObject($this->mapUserToObject(json_decode($json, true)));
+      $array = json_decode($response->getBody(), true);
+      if(is_array($array)) {
+				return $this->cleanUserObject($this->mapUserToObject($array));
+      } else {
+	      throw new \Exception('El código de autorización no es válido o ha expirado.', 1);
+      }
     } catch(\Exception $e) {
-    	return $e->getMessage();
-    }
+    	echo $e->getMessage();
+    }	
 	}
 }
