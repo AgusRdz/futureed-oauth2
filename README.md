@@ -28,6 +28,7 @@ Después de instalar la librería FutureED/OAuth2, en tu archivo de configuraci�
 ```
 
 Además, añade el facade FutureED al arreglo de alias en tu archivo de configuración:
+
 `'FutureED' => FutureED\OAuth2\Facades\FutureED::class,`
 
 En el archivo ```config/services.php``` registra el siguiente servicio:
