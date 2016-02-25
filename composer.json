@@ -19,20 +19,6 @@
             "email": "agustinurdz_@hotmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "-dev",
     "prefer-stable": true,
-    "repositories": [
-      {
-        "type": "package",
-        "package": {
-          "name": "futureed/oauth2",
-          "version": "dev-master",
-          "source": {
-            "url": "https://github.com/AgusRdz/futureed-oauth2.git",
-            "type": "git",
-            "reference": "master"
-          }
-        }
-      }
-    ]
 }
