@@ -1,6 +1,6 @@
 {
     "name": "futureed/oauth2",
-    "description": "FutureED OAuth2 provides an expresive, fluent interface to OAuth Authce to OAuth Authentication with FutureED and derivates.",
+    "description": "FutureED OAuth2 provides an expresive, fluent interface to OAuth Authentication with FutureED and derivates.",
     "type": "package",
     "require": {
         "php": "^5.5",
