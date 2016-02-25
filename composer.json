@@ -1,0 +1,22 @@
+{
+    "name": "futureed/oauth2",
+    "description": "FutureED OAuth2 provides an expresive, fluent interface to OAuth Authce to OAuth Authentication with FutureED and derivates.",
+    "type": "library",
+    "require": {
+        "php": "^5.5",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FutureED\\OAuth2\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Agustin Uziel Espinoza Rodriguez",
+            "email": "agustinurdz_@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
