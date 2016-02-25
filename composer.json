@@ -1,7 +1,8 @@
 {
     "name": "futureed/oauth2",
     "description": "FutureED OAuth2 provides an expresive, fluent interface to OAuth Authce to OAuth Authentication with FutureED and derivates.",
-    "type": "package",
+    "type": "library",
+    "description": "OAuth2 library",
     "require": {
         "php": "^5.5",
         "guzzlehttp/guzzle": "^6.1"
@@ -18,5 +19,11 @@
             "email": "agustinurdz_@hotmail.com"
         }
     ],
-    "prefer-stable" : true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev-master"
+        }
+    }
 }
