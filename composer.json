@@ -18,6 +18,5 @@
             "email": "agustinurdz_@hotmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "prefer-stable" : true
 }
