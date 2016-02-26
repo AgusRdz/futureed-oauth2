@@ -45,7 +45,7 @@ interface User {
 	public function getEmail();
 
 	/**
-   * Get the avatar / image URL for the user.
+   * Get the avatar URL for the user.
    *
    * @return string
    */
