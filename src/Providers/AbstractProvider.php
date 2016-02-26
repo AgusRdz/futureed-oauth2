@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Request as GuzzleRequest;
 use Symphony\Component\HttpFoundation\RedirectResponse;
 use FutureED\OAuth2\Contracts\Provider as ProviderContract;
 use Illuminate\Support\Facades\Redirect;
+use InvalidArgumentException;
 
 abstract class AbstractProvider implements ProviderContract {
 
@@ -118,6 +119,6 @@ abstract class AbstractProvider implements ProviderContract {
       }
     } catch(\Exception $e) {
     	echo $e->getMessage();
-    }	
+    }
 	}
 }
