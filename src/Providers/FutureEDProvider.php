@@ -12,9 +12,8 @@ class FutureEDProvider extends AbstractProvider implements ProviderInterface {
 	 */
 	protected function mapUserToObject(array $user) {
 		return (new User)->setRaw($user)->map([
-			'id'			=> $user['id'],
-			'token'			=> $user['token'],
 			'uid'			=> $user['uid'],
+			'token'			=> $user['token'],
 			'full_name'		=> $user['full_name'],
 			'first_name'	=> $user['first_name'],
 			'last_name'		=> $user['last_name'],
