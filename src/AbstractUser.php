@@ -10,7 +10,7 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
      *
      * @var mixed
      */
-    public $id;
+    public $uid;
 
     /**
      * The user's access token.
@@ -20,12 +20,12 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
     public $token;
 
     /**
-     * The user's nickname / username.
+     * The user's full name.
      *
      * @var string
      */
-    public $nickname;
-
+    public $full_name;
+    
     /**
      * The user's first name.
      *
@@ -39,6 +39,13 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
      * @var string
      */
     public $last_name;
+
+    /**
+     * The user's nickname / username.
+     *
+     * @var string
+     */
+    public $nickname;
 
     /**
      * The user's e-mail address.
@@ -55,13 +62,55 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
     public $avatar;
 
     /**
+     * The user's birthdate.
+     * @var date
+     */
+    public $birthdate;
+
+    /**
+     * The user's gender.
+     * @var string
+     */
+    public $gender;
+
+    /**
      * Get the unique identifier for the user.
      *
      * @return string
      */
-    public function getId()
+    public function getUID()
     {
-        return $this->id;
+        return $this->uid;
+    }
+
+    /**
+     * Get the full name of the user.
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->full_name;
+    }
+
+    /**
+     * Get the first name of the user.
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * Get the last name of the user.
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
     }
 
     /**
@@ -72,26 +121,6 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
     public function getNickname()
     {
         return $this->nickname;
-    }
-
-    /**
-     * Get the first name of the user.
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Get the last name of the user.
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->name;
     }
 
     /**
@@ -121,6 +150,26 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
      */
     public function getToken() {
     	return $this->token;
+    }
+
+    /**
+     * Get the birthdate of the user.
+     *
+     * @return string
+     */
+    public function getBirthdate()
+    {
+        return $this->birthdate;
+    }
+
+    /**
+     * Get the gender of the user.
+     *
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**
