@@ -52,7 +52,7 @@ abstract class AbstractProvider implements ProviderContract {
    * @return void
    */
 	public function __construct(Request $request, $clientId, $clientSecret, $redirectUrl) {
-		$this->base_uri = 'http://localhost:8000/api/v1.0/';
+		$this->base_uri = 'http://auth.futureed.com/api/v1.0/';
 		$this->request = $request;
 		$this->clientId = $clientId;
 		$this->clientSecret = $clientSecret;
@@ -117,8 +117,8 @@ abstract class AbstractProvider implements ProviderContract {
 			} else if($request->query('error')){
       			return 'Se ha denegado el permiso a la aplicación';
       		} else {
-	      	return 'El código de autorización no es válido o ha expirado.';
-      	}
+	      		return 'El código de autorización no es válido o ha expirado.';
+      		}
     	} catch(\Exception $e) {
     		echo $e->getMessage();
     	}
