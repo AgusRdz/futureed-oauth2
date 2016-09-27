@@ -3,7 +3,7 @@
     "description": "FutureED OAuth2 provee la lógica requerida para realizar una autorización mediante el uso del protocolo OAuth2. Este paquete esta diseñado exclusivamente para la plataforma FutureED y sus derivados.",
     "type": "package",
     "require": {
-        "php": "~5.5",
+        "php": ">=5.5",
         "guzzlehttp/guzzle": "^6.1"
     },
     "autoload": {
